@@ -1,0 +1,65 @@
+{
+  "name": "bishopm/blog",
+  "description": "Laravel-based blog",
+  "license": "MIT",
+  "keywords": [
+    "blog"
+  ],
+  "type": "library",
+  "authors": [
+    {
+      "name": "Michael Bishop",
+      "email": "admin@church.net.za"
+    }
+  ],
+  "require": {
+    "php": ">=7.2",
+    "illuminate/support": "7.*",
+    "laravelcollective/html": "6.*",
+    "laracasts/flash": "3.*",
+    "cartalyst/tags": "10.*",
+    "guzzlehttp/guzzle": "6.*",
+    "spatie/laravel-permission": "3.*",
+    "actuallymab/laravel-comment": "1.*",
+    "plank/laravel-mediable": "4.*",
+    "laravelium/feed": "7.*",
+    "jorenvanhocht/laravel-share": "3.*",
+    "laravel/ui": "2.*"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^4.0|^5.0",
+    "phpunit/phpunit": "^8.4|^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Bishopm\\Blog\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Bishopm\\Blog\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "phpunit": "phpunit",
+    "post-install-cmd": [
+      "ln -sr storage/app/public public/storage"
+    ],
+    "post-package-update": [
+        "php artisan vendor:publish",
+        "php artisan migrate"
+    ]
+  },
+  "extra": {
+    "laravel": {
+        "providers": [
+            "Bishopm\\Blog\\Providers\\BlogServiceProvider"
+        ]
+    }
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  }
+}

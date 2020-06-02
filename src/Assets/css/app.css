@@ -1,0 +1,26 @@
+.breadcrumb {
+    float: right;
+    background: transparent;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    padding: 7px 5px;
+    right: 10px;
+    border-radius: 2px;
+}
+
+body > nav > a {
+    color:white;
+}
+
+a.navbar-brand {
+    color:white;
+}
+
+#navbarDropdown {
+    color:white;
+}
+
+h1, h5, li, p {
+    font-family: 'Quicksand', sans-serif;
+}
